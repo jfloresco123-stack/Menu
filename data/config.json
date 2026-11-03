@@ -30,12 +30,12 @@
     }
   },
   "local": {
-    "nombre": "Mi Restaurante",
-    "nombreCorto": "Restaurante",
+    "nombre": "El huequito de Kokoloco",
+    "nombreCorto": "Cevicheria",
     "eslogan": "",
-    "logo": "",
+    "logo": "Img/logo.jpg",
     "foto": "",
-    "direccion": "",
+    "direccion": "Lucas cutivalu ",
     "referencia": "",
     "ciudad": "",
     "mapa": "",
