@@ -1,0 +1,105 @@
+{
+  "version": "ejemplo",
+  "categorias": [
+    {
+      "id": "entradas",
+      "nombre": "Entradas",
+      "icono": "🥟"
+    },
+    {
+      "id": "fondo",
+      "nombre": "Platos de fondo",
+      "icono": "🍲"
+    },
+    {
+      "id": "bebidas",
+      "nombre": "Bebidas",
+      "icono": "🍹"
+    }
+  ],
+  "platos": [
+    {
+      "id": "e1",
+      "cat": "entradas",
+      "nombre": "Causa",
+      "desc": "Plato de ejemplo: edita nombre, precio y foto en el Panel del Dueño.",
+      "precio": 15,
+      "img": "img/causa.jpg",
+      "especialidad": false,
+      "activo": true,
+      "tags": []
+    },
+    {
+      "id": "e2",
+      "cat": "entradas",
+      "nombre": "Piqueo de la casa",
+      "desc": "Plato de ejemplo para compartir.",
+      "precio": 25,
+      "img": "img/piqueo.jpg",
+      "especialidad": false,
+      "activo": true,
+      "tags": []
+    },
+    {
+      "id": "f1",
+      "cat": "fondo",
+      "nombre": "Cebiche",
+      "desc": "Plato de ejemplo con pescado fresco y limón.",
+      "precio": 30,
+      "img": "img/cebiche.jpg",
+      "especialidad": true,
+      "activo": true,
+      "tags": [
+        "marino",
+        "picante"
+      ]
+    },
+    {
+      "id": "f2",
+      "cat": "fondo",
+      "nombre": "Ronda marina",
+      "desc": "Plato de ejemplo para compartir.",
+      "precio": 45,
+      "img": "img/ronda.jpg",
+      "especialidad": false,
+      "activo": true,
+      "tags": [
+        "marino"
+      ]
+    },
+    {
+      "id": "f3",
+      "cat": "fondo",
+      "nombre": "Seco",
+      "desc": "Plato de ejemplo con guarnición.",
+      "precio": 28,
+      "img": "img/seco.jpg",
+      "especialidad": true,
+      "activo": true,
+      "tags": []
+    },
+    {
+      "id": "b1",
+      "cat": "bebidas",
+      "nombre": "Limonada (jarra)",
+      "desc": "Bebida de ejemplo.",
+      "precio": 12,
+      "img": "",
+      "especialidad": false,
+      "activo": true,
+      "tags": []
+    },
+    {
+      "id": "b2",
+      "cat": "bebidas",
+      "nombre": "Gaseosa",
+      "desc": "Bebida de ejemplo.",
+      "precio": 6,
+      "img": "",
+      "especialidad": false,
+      "activo": true,
+      "tags": []
+    }
+  ],
+  "extras": []
+}

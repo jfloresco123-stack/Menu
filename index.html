@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Carta digital</title>
+  <meta name="description" content="Carta digital del restaurante.">
+  <meta name="theme-color" content="#C2502E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23C2502E'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-weight='900' font-size='42' fill='%23F2D48A'%3E%F0%9F%8D%BD%3C/text%3E%3C/svg%3E">
+
+  <!-- Aplica el tema guardado ANTES de pintar para evitar el parpadeo claro/oscuro -->
+  <script>
+    (function () {
+      try {
+        // Mismo prefijo que js/store.js
+        var dir = location.pathname.replace(/[^/]*$/, '').replace(/^\/|\/$/g, '');
+        var t = localStorage.getItem('carta.' + (dir ? dir + '.' : '') + 'tema');
+        var oscuro = t ? JSON.parse(t) === 'oscuro' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (oscuro) document.documentElement.classList.add('dark');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Tipografías: Playfair Display (logotipo y títulos) + Inter (interfaz) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS (CDN, versión fijada) + configuración de marca -->
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+          },
+          colors: {
+            // Arcilla: color principal de la marca
+            arcilla: { 50: '#FBF3EF', 100: '#F6E2D8', 200: '#EDC2AE', 300: '#E09A7C', 400: '#D0714F', 500: '#C2502E', 600: '#A63F22', 700: '#84321D', 800: '#63271A', 900: '#451C14' },
+            // Oro: acentos y badges de especialidad
+            oro: { 200: '#F8E6B8', 300: '#F2D48A', 400: '#E8BC5A', 500: '#D4A23A', 600: '#B07F22' },
+            // Verde palma: estados correctos
+            palma: { 400: '#5FA36A', 500: '#3E8A4F', 600: '#2E6E3D' },
+            crema: { 50: '#FFFBF5', 100: '#FAF3E8', 200: '#F1E5D1' },
+            carbon: { 700: '#3A322E', 800: '#241E1B', 900: '#1A1513', 950: '#100C0B' },
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Componentes reutilizables (procesados por Tailwind en el navegador) -->
+  <style type="text/tailwindcss">
+    @layer components {
+      .chip { @apply inline-flex shrink-0 select-none items-center gap-1.5 rounded-full bg-white px-3.5 py-2 text-sm font-semibold text-carbon-800 ring-1 ring-carbon-900/10 transition active:scale-95 dark:bg-carbon-800 dark:text-crema-100 dark:ring-white/10; }
+      .chip[aria-pressed="true"] { @apply bg-arcilla-500 text-white shadow-lg shadow-arcilla-500/25 ring-arcilla-500 dark:bg-oro-400 dark:text-carbon-950 dark:ring-oro-400; }
+      .campo { @apply w-full rounded-2xl bg-white px-4 py-3 text-base text-carbon-900 outline-none ring-1 ring-carbon-900/10 transition placeholder:text-carbon-700/40 focus:ring-2 focus:ring-arcilla-500 dark:bg-carbon-800 dark:text-crema-50 dark:ring-white/10 dark:placeholder:text-crema-100/30 dark:focus:ring-oro-400; }
+      .btn-primario { @apply inline-flex min-h-[52px] select-none items-center justify-center gap-2 rounded-2xl bg-arcilla-500 px-5 font-bold text-white shadow-lg shadow-arcilla-500/30 transition hover:bg-arcilla-600 active:scale-[.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none; }
+      .btn-secundario { @apply inline-flex min-h-[48px] select-none items-center justify-center gap-2 rounded-2xl bg-carbon-900/5 px-5 font-semibold text-carbon-900 transition hover:bg-carbon-900/10 active:scale-[.98] dark:bg-white/10 dark:text-crema-50 dark:hover:bg-white/15; }
+      .btn-icono { @apply grid h-11 w-11 shrink-0 place-items-center rounded-full bg-carbon-900/5 text-carbon-900 transition hover:bg-carbon-900/10 active:scale-90 dark:bg-white/10 dark:text-crema-50 dark:hover:bg-white/15; }
+      .superficie { @apply bg-white ring-1 ring-carbon-900/5 dark:bg-carbon-800 dark:ring-white/5; }
+      .texto-suave { @apply text-carbon-700/70 dark:text-crema-100/60; }
+      .precio { @apply font-bold tabular-nums text-arcilla-600 dark:text-oro-400; }
+    }
+  </style>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen bg-crema-50 font-sans text-carbon-900 antialiased dark:bg-carbon-950 dark:text-crema-100">
+  <div id="app"></div>
+  <div id="toasts" class="pointer-events-none fixed inset-x-0 top-0 z-[70] flex flex-col items-center gap-2 px-4 pt-toasts" aria-live="polite"></div>
+
+  <noscript>
+    <p style="padding:2rem;text-align:center;font-family:sans-serif">Activa JavaScript para ver la carta.</p>
+  </noscript>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

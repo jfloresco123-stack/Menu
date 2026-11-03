@@ -1,0 +1,60 @@
+{
+  "totalMesas": 10,
+  "mozos": [
+    {
+      "id": 1,
+      "nombre": "Mozo 1",
+      "telefono": "999999991"
+    },
+    {
+      "id": 2,
+      "nombre": "Mozo 2",
+      "telefono": "999999992"
+    }
+  ],
+  "accesos": {
+    "duenoHash": "35de0aad96a3ab4d93f3c155b75bd6205c25523ccd70c9a1bb174aaea4a91b7c",
+    "adminHash": "6051fc84a7a0d74c225fb18a496b09952da5642e60723ecae543298edd7d82d6",
+    "mozoHash": ""
+  },
+  "pagos": {
+    "yape": {
+      "numero": "",
+      "titular": "",
+      "qr": ""
+    },
+    "plin": {
+      "numero": "",
+      "titular": "",
+      "qr": ""
+    }
+  },
+  "local": {
+    "nombre": "Mi Restaurante",
+    "nombreCorto": "Restaurante",
+    "eslogan": "",
+    "logo": "",
+    "foto": "",
+    "direccion": "",
+    "referencia": "",
+    "ciudad": "",
+    "mapa": "",
+    "telefono": "",
+    "horario": "",
+    "ruc": "",
+    "razonSocial": "",
+    "facebook": "",
+    "instagram": "",
+    "urlPublica": ""
+  },
+  "jornada": null,
+  "horario": {
+    "inicio": "06:00",
+    "cierre": "06:00"
+  },
+  "repo": {
+    "owner": "",
+    "repo": "",
+    "rama": "main"
+  }
+}
