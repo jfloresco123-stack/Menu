@@ -47,7 +47,14 @@
     "instagram": "",
     "urlPublica": ""
   },
-  "jornada": null,
+  "jornada": {
+    "id": "uX2HUD66",
+    "sal": "rQacPZok0qiYsoDad7hgzg==",
+    "iter": 150000,
+    "hash": "2w4E7aMM9duQvUWH6pO3K4v1qwCcnQbIHysguZKHNRk=",
+    "abierta": 1793732291911,
+    "vence": 1793790000000
+  },
   "horario": {
     "inicio": "06:00",
     "cierre": "06:00"
