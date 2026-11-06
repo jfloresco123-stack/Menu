@@ -26,7 +26,7 @@
       "precio": 15,
       "img": "img/causa.jpg",
       "especialidad": false,
-      "activo": true,
+      "activo": false,
       "tags": []
     },
     {
@@ -48,7 +48,7 @@
       "precio": 30,
       "img": "img/cebiche.jpg",
       "especialidad": true,
-      "activo": true,
+      "activo": false,
       "tags": [
         "marino",
         "picante"
@@ -62,7 +62,7 @@
       "precio": 45,
       "img": "img/ronda.jpg",
       "especialidad": false,
-      "activo": true,
+      "activo": false,
       "tags": [
         "marino"
       ]
