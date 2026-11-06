@@ -4,7 +4,7 @@
     {
       "id": 1,
       "nombre": "Mozo 1",
-      "telefono": "999999991"
+      "telefono": "949730651"
     },
     {
       "id": 2,
@@ -48,12 +48,12 @@
     "urlPublica": ""
   },
   "jornada": {
-    "id": "5FAUQFGy",
-    "sal": "R4Cxhi6filsE52xs9k1LfA==",
+    "id": "uX2HUD66",
+    "sal": "rQacPZok0qiYsoDad7hgzg==",
     "iter": 150000,
-    "hash": "edOjdatBgZz/KkHpFxTHg8wU8qHhrq2Yu8JKQNGt/pA=",
-    "abierta": 1793943752757,
-    "vence": 1793962800000
+    "hash": "2w4E7aMM9duQvUWH6pO3K4v1qwCcnQbIHysguZKHNRk=",
+    "abierta": 1793732291911,
+    "vence": 1793790000000
   },
   "horario": {
     "inicio": "06:00",
